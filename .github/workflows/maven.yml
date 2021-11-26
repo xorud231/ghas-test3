@@ -60,6 +60,11 @@ jobs:
         name: ${{ env.AZURE_WEBAPP_NAME }}
         path: ${{ github.workspace }}/target/*.jar
         
+  deploy:
+    runs-on: ubuntu-latest
+    #environment: dev
+    
+    steps:
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
